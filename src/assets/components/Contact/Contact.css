@@ -1,0 +1,18 @@
+#contact h5{
+    color: rgb(114, 112, 112);
+}
+
+@media (max-width: 768px) {
+    .row {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+  
+    .row img {
+      margin-bottom: 20px;
+    }
+
+    .col-md-3 img{
+        width: 60%;
+    }
+}
