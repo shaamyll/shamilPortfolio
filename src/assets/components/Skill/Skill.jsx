@@ -9,7 +9,7 @@ import ang from "../Images/ang.png";
 import node from "../Images/nodejs.png";
 import ex from "../Images/express.png";
 import db from "../Images/mongo.png";
-
+import './Skill.css'
 const skills = [
   { img: html, name: "HTML" },
   { img: css, name: "CSS" },

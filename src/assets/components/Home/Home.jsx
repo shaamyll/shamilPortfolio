@@ -22,7 +22,7 @@
         >
 
         <div className="container " style={{marginTop:"180px"}}>
-        <div className="row border-bottom" >
+        <div id='home' className="row border-bottom" >
 
     <div className="col-12 col-md-5 ps-5 pt-5 " >
     <h2 className='fw-bold'>Hi! , I'm</h2>
@@ -34,7 +34,7 @@
     </div>
 
     <div className="col-12 col-md-7 text-center">
-        <img className='animate__animated ' src={dev} alt="" style={{width:"70%"}} />
+        <img id='shaa' className='animate__animated ' src={dev} alt="" style={{width:"70%"}} />
     </div>
 
     

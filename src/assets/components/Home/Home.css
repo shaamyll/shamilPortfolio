@@ -26,5 +26,20 @@ h1 {
 }
 
 
+@media (max-width: 768px) {
+    /* #home {
+      flex-direction: column-reverse;
+      align-items: center;
+    } */
+  
+    .row #shaa {
+      margin-bottom: 20px;
+      height: 350px;
+    }
+
+    .col-md-3 img{
+        width: 60%;
+    }
+}
 
 

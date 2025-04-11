@@ -15,7 +15,7 @@ function Contact() {
            <h5>Location</h5>
            <h4>Kannur,Kerala</h4>
            </div>
-           <div className="col-12 col-md-3 p-3">
+           <div className="col-12 col-md-3 p-5">
              <h4>Social</h4> <br />
              <a href="https://github.com/shaamyll"> <h4 className='border-bottom w-50'>Github<GoArrowUpRight /></h4> </a>
 
@@ -24,7 +24,7 @@ function Contact() {
              <a href="https://www.instagram.com/shaamyll"> <h4 className='border-bottom w-50'>Instagram<GoArrowUpRight /></h4> </a>
 
            </div>
-           <div className="col-12 col-md-3 p-4 ">
+           <div className="col-12 col-md-3 p-5 ">
             <h5> Designed and Developed </h5>
             <h4>by <span className='fw-bold' style={{color:"gray"}}>Muhammed Shamil</span></h4>
             <a href="file:///C:/Users/VICTUS/OneDrive/Desktop/DOCUMENTS/MUHAMMED-SHAMIL-P-K-CV.pdf"><h4 className='mt-5'>RESUME <CgNotes className='mb-1'/></h4></a>

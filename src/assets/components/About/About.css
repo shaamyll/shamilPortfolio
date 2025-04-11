@@ -5,7 +5,7 @@
 
 
 @media (max-width: 768px) {
-    .row {
+    #about {
       flex-direction: column-reverse;
       align-items: center;
     }
