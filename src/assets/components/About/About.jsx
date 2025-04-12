@@ -15,7 +15,7 @@ function About() {
       <h5>Expertise in MongoDB, Express.js,Angular.js,React.js and Node.js,with a solid understanding of web 
       development fundamentals.</h5> <br />
       <h1>Techstack</h1> <br />
-      <h4>ReactJs,Javascript,NodeJs,MongoDB</h4>
+      {/* <h4>ReactJs,Javascript,NodeJs,MongoDB</h4> */}
       </div>
       <div className="col-12 col-md-3 mt-lg-5 container text-center">
     <img src={mern} alt="" style={{width:"90%"}} />

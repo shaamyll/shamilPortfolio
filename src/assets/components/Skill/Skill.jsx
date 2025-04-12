@@ -42,7 +42,46 @@ const Skill = () => {
         paddingBottom:"50px"
       }}
     >
-
+     {/* Second Marquee (Right to Left) */}
+     <div
+        style={{
+          width: "100%",
+          overflow: "hidden",
+          whiteSpace: "nowrap",
+          position: "relative",
+          paddingBottom:"30px"
+                }}
+      >
+        <div
+          style={{
+            display: "flex",
+            gap: "50px",
+            width: "max-content",
+            animation: "scrollRight 30s linear infinite",
+          }}
+        >
+          {[...secondRow, ...secondRow,...secondRow,...secondRow].map((skill, index) => (
+            <div
+              key={index}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "10px",
+                minWidth: "150px",
+              }}
+            >
+              <img
+                src={skill.img}
+                alt={skill.name}
+                style={{ width: "40px", height: "40px", marginBottom: "5px" }}
+              />
+              <span className="fs-4"> {skill.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* First Marquee (Left to Right) */}
       <div
@@ -76,7 +115,7 @@ const Skill = () => {
               <img
                 src={skill.img}
                 alt={skill.name}
-                style={{ width: "50px", height: "50px", marginBottom: "5px" }}
+                style={{ width: "40px", height: "40px", marginBottom: "5px" }}
               />
               <span className="fs-4">{skill.name}</span>
             </div>
@@ -84,46 +123,7 @@ const Skill = () => {
         </div>
       </div>
 
-      {/* Second Marquee (Right to Left) */}
-      <div
-        style={{
-          width: "100%",
-          overflow: "hidden",
-          whiteSpace: "nowrap",
-          position: "relative",
-          marginTop: "20px",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            gap: "50px",
-            width: "max-content",
-            animation: "scrollRight 30s linear infinite",
-          }}
-        >
-          {[...secondRow, ...secondRow,...secondRow,...secondRow].map((skill, index) => (
-            <div
-              key={index}
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                padding: "10px",
-                minWidth: "150px",
-              }}
-            >
-              <img
-                src={skill.img}
-                alt={skill.name}
-                style={{ width: "50px", height: "50px", marginBottom: "5px" }}
-              />
-              <span className="fs-4"> {skill.name}</span>
-            </div>
-          ))}
-        </div>
-      </div>
+ 
 
       {/* Inline Keyframes for Animations */}
       <style>

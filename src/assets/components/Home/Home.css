@@ -1,5 +1,12 @@
+#name{
+    font-size: 3rem;
+    font-weight: bolder;
+}
 
-
+#surname{
+    font-size: 5rem;
+    font-weight: bolder;
+}
 
 .main {
     margin: 0px;
@@ -25,21 +32,45 @@ h1 {
     color: transparent; /* Fallback */
 }
 
+#main{
+    padding-top: 180px;
+}
+
 
 @media (max-width: 768px) {
-    /* #home {
-      flex-direction: column-reverse;
-      align-items: center;
-    } */
-  
+
+    #main{
+        padding-top: 100px;
+    }
+
     .row #shaa {
-      margin-bottom: 20px;
-      height: 350px;
+        width: 100%; /* Make the image scale with the screen */
+        height: auto;
+        height: 100%;
     }
 
     .col-md-3 img{
         width: 60%;
     }
+    .row {
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+    .col-12 {
+        margin-top: 20px;
+    }
+    #first #name{
+        font-size: 2rem; /* Reduce the size for smaller screens */
+    }
+
+    #first #surname{
+        font-size: 3rem;
+    }
+
+    #first h4{
+        font-size: medium;
+    }
+
 }
 
 
