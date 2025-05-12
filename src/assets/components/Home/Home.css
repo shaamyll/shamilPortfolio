@@ -1,76 +1,110 @@
-#name{
-    font-size: 3rem;
-    font-weight: bolder;
-}
+
 
 #surname{
     font-size: 5rem;
     font-weight: bolder;
 }
 
-.main {
-    margin: 0px;
-    padding: 0px;
-    display: flex;
-    background-size: cover;
-    height: 100vh;
-    width: 100%;
-    color: white;
+
+
+#main h5,h4,#gm{
+    color: rgb(224, 223, 223);
 }
+
+#main {
+    width: 100%;
+    height: 100lvh;
+    background-attachment: fixed;
+  }
+  
+
 
 .row { 
     width: 100%;
 }
 
-h1 {
+#surname {
     font-family: "Audiowide", sans-serif;
-    font-style: normal;
-    background: linear-gradient(to right, rgb(91, 87, 91), rgb(248, 246, 248));
-    -webkit-background-clip: text;
+    background: linear-gradient(90deg, #77faff, #a67ffb, #fdd6ff);
     background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent; /* Fallback */
-}
+    color: transparent;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2); /* subtle glow */
+    letter-spacing: 1px;
+  }
+  
 
 #main{
-    padding-top: 180px;
+    padding-top: 160px;
 }
+
+
+
+
+
+
+#shaa {
+    width: 100%;
+    height: auto;
+    max-height: 612px;
+  }
+  
+
 
 
 @media (max-width: 768px) {
 
     #main{
         padding-top: 100px;
-    }
-
-    .row #shaa {
-        width: 100%; /* Make the image scale with the screen */
         height: auto;
-        height: 100%;
+        margin: 0;
+        padding-top: 30px;
+        }
+
+     #shaa {
+        margin: 0;
+        padding: 0;
+        width: 300px; /* Make the image scale with the screen */
+        height: 110%;
+        text-align: center;
     }
 
-    .col-md-3 img{
-        width: 60%;
-    }
-    .row {
-        margin-bottom: 20px;
-        padding: 10px;
-    }
-    .col-12 {
-        margin-top: 20px;
-    }
-    #first #name{
-        font-size: 2rem; /* Reduce the size for smaller screens */
-    }
 
     #first #surname{
-        font-size: 3rem;
+        font-size: 3.8rem;
     }
 
-    #first h4{
+    #main h5{
         font-size: medium;
     }
 
+    #main h4{
+        font-size: large;
+    }
+
 }
+
+
+
+.blinking-dot {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background-color: #fdd6ff; /* Light blue color */
+  margin-left: 5px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 
 

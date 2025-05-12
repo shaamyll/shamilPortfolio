@@ -1,34 +1,77 @@
-#about{
-    background-color: black;
-    color: white;
+#about-full{
+background-color:  white;
+}
+
+#about-full h4,h5{
+  color: #0d0549;
+
+}
+
+#threed{
+  height: 400px;
+}
+
+#content{
+  margin-top: 70px;
+}
+
+#resume {
+    border: 2px solid white;
+    background: linear-gradient(to bottom,#72b9bc,#2b0778);
+    border-radius: 10px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+
+
+
+
+#resume:hover {
+  border: 2px solid white;
+  background-color: #1abc9c; /* Softer, modern blue */
+  padding: 6px 12px;
+  border-radius: 8px;
+  padding:10px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
 
 @media (max-width: 768px) {
+
+  #threed{
+    height: 300px;
+  }
     #about {
       flex-direction: column-reverse;
       align-items: center;
     }
-  
-    .row img {
-      margin-bottom: 20px;
-    }
 
-    .col-md-3 img{
-        width: 60%;
+    #content{
+      margin-top: 0px;
+    }
+  
+
+    #about img{
+        width: 200px;
     }
 
   }/* General styles for desktop */
+
+
+
 #about {
     padding: 20px;
   }
-  
-  .col-md-6 {
-    padding: 20px;
-  }
-  
-  .col-md-3 img {
-    margin-top: 20px;
+
+  #about img {
     border-radius: 10px;
+    width: 60%;
   }
   

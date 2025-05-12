@@ -1,110 +1,223 @@
-.project-card {
-    background-color: rgba(30, 30, 30, 0.8);
-    border-radius: 12px;
-    overflow: hidden;
+#work-section{
+  background-color: white;
+  }
+
+  #blue{
+    color: rgb(12, 12, 77);
+  }
+
+  #project {
+    overflow: visible;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 550px;
-    animation: appear 5s linear;
+    width: 28%;
+    height: 100%;
+    background-color: #1e1e2f; /* Deep slate that pairs well with dark blue */
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    animation: appear 1s ease-out;
     animation-timeline: view();
-    animation-range: entry 0% entry 100%; /* Adjust as needed */
-  }
-  
-  .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-  }
-  
-  .project-number {
-    font-size: 3rem;
-    font-weight: bolder;
-    color: rgba(255, 255, 255, 0.8);
-    margin: 0;
-  }
-  
-  .project-image-container {
-    height: 550px;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .project-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-    transition: all 0.5s ease;
-  }
-  
-  .project-image.blur {
-    filter: blur(5px);
-    transform: scale(1.05);
-  }
-  
-  .project-details-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.75);
-    color: white;
+    animation-range: entry 0% entry 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    opacity: 0;
-    animation: fadeIn 0.3s ease forwards;
-    text-align: center;
+    justify-content: space-between;
+    color: #f0f0f5; /* Light text for contrast */
   }
   
-  .tech-stack {
-    font-size: 0.95rem;
-    color: #afafaf;
-    max-width: 80%;
-  }
-  
-  .project-description {
-    font-size: 1.1rem;
-    max-width: 80%;
-    line-height: 1.6;
-  }
+#project:hover {
+  transform: translateY(-10px);
+  background-color: #0d0549;
+  box-shadow:
+    0 -4px 9px #77faff,   
+    -4px 0 9px #ac8dee,  
+    4px 0 9px #a179f7,   
+    0 4px 9px #c411ce;    
+  transition: all 0.4s ease-in-out;
+}
+
 
   
   @keyframes appear {
     from {
-        opacity: 0.5;
-        scale: 0.8;
-    }
-    to{
-        opacity: 1;
-        scale: 1;
-    }
-  }
-  
-  
-  @keyframes  fadeIn {
-    from {
       opacity: 0;
+      transform: translateY(30px);
     }
     to {
       opacity: 1;
+      transform: translateY(0);
     }
   }
+  
+
+  .image-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+.overlay-top {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 10px 0;
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+  
+  #project:hover .overlay-top {
+    opacity: 1;
+  }
+  
+  .overlay-btn {
+    background-color: #e1dddd;
+    color: #0c0c4d;
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+  
+  .overlay-btn:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+  }
+  
+
+
+
+
+ 
+  
+
+
+  #tech {
+    display: inline-block;
+    background-color: #f1f1f1;
+    margin: 2px 5px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: #333;
+  }
+  
+
+  .description-scroll {
+    height: 100px; 
+    overflow-y: auto;
+    padding-right: 5px;
+  }
+
+
+  #title,#techstack{
+    height: 90px;
+    color: rgb(224, 223, 223);
+  }
+
+  .description-scroll {
+    color: rgb(224, 223, 223);
+    height: 100px;
+    overflow-y: auto;
+    padding-right: 8px;
+    scrollbar-width: none; /* Firefox: hide scrollbar */
+  }
+  
+  /* Hide scrollbar in WebKit browsers (Chrome, Safari, Edge) */
+  .description-scroll::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+  
+  /* Show scrollbar on hover */
+  .description-scroll:hover {
+    scrollbar-width: thin; /* Firefox: show thin scrollbar */
+  }
+  
+  /* WebKit scrollbar styles on hover */
+  .description-scroll:hover::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .description-scroll:hover::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 10px;
+  }
+  
+
+  #image{
+    height: 230px;
+    filter: brightness(40%);
+    transition: filter 0.5s ease;
+  }
+
+
+
+  #project:hover #image{
+    filter: brightness(100%);
+  }
+
+
+
+
+
+  
+  #project:hover {
+    transform: scale(-5px);
+    /* filter: drop-shadow(0 5px 10px #a39cf7); */
+  }
+  
+
+  @keyframes appear{
+    from{
+      opacity: 0;
+      scale: 0.5;
+    } 
+    to{
+      opacity: 1;
+      scale: 1;
+    }
+  }
+
+  #project{
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+  }
+
+ 
   
   
   /* Responsive adjustments */
   @media (max-width: 768px) {
-    .project-image-container {
-      height: 100%;
+
+    .row{
+      width: 100%;
     }
-    
-    .project-details-overlay {
-      padding: 1rem;
+
+    #title{
+      height: 100px;
     }
-    
-    .project-description {
-      font-size: 0.9rem;
+
+    #title span{
+      font-size: small;
     }
+
+    #project{
+      background-position: center;
+      margin-bottom: 20px;
+      padding: 10px;
+      width: 90%;
+    }
+
+ 
+
+
   }
 

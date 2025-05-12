@@ -1,11 +1,25 @@
-#contact h5{
-    color: rgb(114, 112, 112);
+
+
+#contact {
+  padding: 60px 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background: radial-gradient(circle at top, #0d0549 0%, rgb(1, 1, 18) 100%);
+  color: #fff;
+  margin-top: 70px;
 }
+
+
+
+
+
+
+
+
 
 @media (max-width: 768px) {
     #contact {
       flex-direction: column-reverse;
-      align-items: center;
     }
   
     .row img {
@@ -14,5 +28,9 @@
 
     .col-md-3 img{
         width: 60%;
+    }
+
+    #contact .col-12 {
+      padding: 10px;
     }
 }

@@ -1,0 +1,113 @@
+/* Scroll Left to Right */
+
+#skill-section span{
+  color: #0d0549;
+
+}
+
+
+
+@keyframes scrollRight {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Scroll Right to Left */
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+
+/* Skills Box */
+#skillsBox {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+/* First Marquee (Left to Right) */
+#scrollRight {
+  display: flex;
+  gap: 50px;
+  width: max-content;
+  animation: scrollRight 20s linear infinite;
+}
+
+/* Second Marquee (Right to Left) */
+#scrollLeft {
+  display: flex;
+  gap: 50px;
+  width: max-content;
+  animation: scrollLeft 20s linear infinite;
+}
+
+/* Skill Item Styling */
+#scrollRight div,
+#scrollLeft div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  min-width: 150px;
+}
+
+/* Box Styles */
+#box {
+  width: 40px; /* Reduce the width of the box */
+}
+
+/* Image inside the box */
+#box img {
+  width: 40px; /* Smaller image width */
+  height: 40px; /* Smaller image height */
+}
+
+#skname{
+  font-weight: 500;
+  font-size: large;
+}
+
+
+
+@media (max-width:768px){
+    #skillsBox {
+        padding: px; 
+      }
+    
+      #scrollRight, #scrollLeft {
+        gap: 10px; 
+        animation-duration: 15s; 
+      }
+    
+      #scrollRight div, #scrollLeft div {
+        min-width: 100px; 
+        padding: 5px; 
+      }
+    
+      #box {
+        width: 40px; 
+      }
+    
+      #box img {
+        width: 40px; 
+        height: 40px; 
+      }
+    
+      .fs-5 {
+        display: none;
+        font-size: 0.6rem;
+      }
+}
+

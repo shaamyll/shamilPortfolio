@@ -1,100 +1,62 @@
+@import "tailwindcss";
+
 .h{
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 #nav {
     position: fixed; /* Keeps the navbar fixed */
-    top: 20px; /* Adjust top position */
     left: 50%; /* Move it to the center */
     transform: translateX(-50%); /* Center it properly */
-    width: 50%; /* Keep it at the same width */
-    z-index: 1000; /* Ensure it stays above other elements */
-    border-radius: 40px; /* Maintain rounded corners */
-    backdrop-filter: blur(10px);
-    /* background-color: rgba(255,255,255,0.15); */
-    background-color: transparent;
-}
-
-#nav li{
-  /* font-family: "Montserrat", sans-serif; */
-  text-decoration: none;
-  color: white;
-}
-
-#foot {
-  border: 1px solid gray;
-  border-radius: 40px;
-  color:"green";
-  float: right;
-  height: 100px;
-  width: 40px;
-  position: fixed;
-  /* backdrop-filter: blur(10px); */
-  background-color: transparent;
-  z-index: 1000;
-}
-
-#foot:hover { 
-  background-color: rgb(9, 202, 202);
-}
-
-#logo { 
-  mix-blend-mode: color-burn;
-}
-
-
-
-  
-/* Mobile menu overlay */
-.mobile-menu {
-    top: 0;
-    left: 0;
-    height: 100vh;
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     z-index: 1000;
-  }
-  
-  /* Close button */
-  .close-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-  }
-  
-  /* Menu items */
-  .menu-items {
+    backdrop-filter: blur(10px);
+    background-color: #1e1e2f;
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
+    justify-content: space-around;
+  border-radius: 15px;
   }
-  
-  .menu-items a {
-    color: white;
-    font-size: 20px;
+
+  #nav a{
     text-decoration: none;
-    transition: 0.3s;
+    color: inherit;
+    color: white;
+    font-size: medium;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 1px 12px;
   }
-  
+
+
+#nav a.active-link{
+  background: linear-gradient(to right,#a67ffb,rgb(5, 5, 71));
+  color: white;
+  border-radius: 9px;
+}
 
 
 
 
 
-    /* Header.css */
-@media (max-width: 1500px) {
-  .hide-nav {
-    display: none !important;
+
+@media (max-width:768px) {
+  #nav{
+    width: 90%;
+  }
+
+  #nav a{
+    font-size: small;
+  }
+
+
+
+}
+
+
+
+@media (min-width:768px){
+  #nav{
+    width: 40%;
   }
 }
 

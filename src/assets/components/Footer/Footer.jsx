@@ -1,40 +1,15 @@
-import React from 'react';
-import {
-  MDBFooter,
-  MDBContainer,
-  MDBBtn,
-  MDBIcon,
-} from 'mdb-react-ui-kit';
-import './Footer.css'
-import { GoArrowUpRight } from "react-icons/go";
+import React from 'react'
+import '../Footer/Footer.css'
 
-function Footer({ darkMode }) {
+function Footer() {
   return (
-    <div className='' style={{ backgroundColor:'black'}}>
-      {/* <h1>Contact</h1> */}
-      {/* <div className="row">
-        <div className="col-4 p-5">
-        <h5>Email</h5>
-        <h5>shamilpk708@gmail.com</h5> 
-        <br />
-        <h5>Location</h5>
-        <h5>Kannur,Kerala</h5>
-        </div>
-        <div className="col-4 p-5">
-          <h5>Social</h5> <br />
+    <div id='footer' >
 
-          <a href=""> <h5 className='border-bottom w-25'>Linkedin<GoArrowUpRight /></h5> </a>
-        </div>
-        <div className="col-4 p-5">
-         <h5> Designed and Developed </h5>
-         <h5>by Muhammed Shamil</h5>
-        </div>
-      </div> */}
-
-
-      
+        <center>
+            <div><p  className='pt-1'>Designed and Developed by Muhammed Shamil © 2025</p></div>
+        </center>
     </div>
-  );
+  )
 }
 
-export default Footer;
+export default Footer
