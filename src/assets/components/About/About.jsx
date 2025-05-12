@@ -20,9 +20,9 @@ function About() {
 
 
         <div className="col-12 col-md-7 mx-auto " id='content'  >
-          <h5 className=' font-bold fs-4'>Hi Iam  Muhammed Shamil pk,</h5> <br />
+          <h4 className=' font-bold'>Hi Iam  Muhammed Shamil pk,</h4> <br />
           <h5 className='font-medium'>Im a Full Stack Developer with a Bachelors degree in Computer Application and a 6 months of hands-on experience in developing dynamic web applications using MERN Stack. </h5> <br />
-          <h5>Expertise in MongoDB, Express.js,Angular.js,React.js and Node.js,with a solid understanding of web
+          <h5 className='leading-relaxed'>Expertise in MongoDB, Express.js,Angular.js,React.js and Node.js,with a solid understanding of web
             development fundamentals.</h5> <br />
       <div className='flex justify-center'>
               <a
@@ -41,7 +41,6 @@ function About() {
         </div>
       </div>
 
-      <Skill />
 
     </div>
 

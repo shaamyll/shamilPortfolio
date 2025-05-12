@@ -66,7 +66,7 @@ const phrases = [
                                         <h2><FaGithub id='logo'  className="text-white hover:text-[#77faff] hover:scale-110 transition-transform duration-300"/></h2></a>
 
 
-                                   <a href="https://www.instagram.com/shaamyll">
+                                   <a href="https://www.instagram.com/shaamyll?igsh=MWJqMmdleGxqcW02YQ%3D%3D&utm_source=qr">
                                    <h2 ><SiInstagram id='logo'  className="text-white hover:text-[#77faff] hover:scale-110 transition-transform duration-300"/></h2>
                                    </a>
 

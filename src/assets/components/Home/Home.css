@@ -13,7 +13,7 @@
 
 #main {
     width: 100%;
-    height: 100lvh;
+    height: auto;
     background-attachment: fixed;
   }
   
@@ -45,7 +45,6 @@
 #shaa {
     width: 100%;
     height: auto;
-    max-height: 612px;
   }
   
 

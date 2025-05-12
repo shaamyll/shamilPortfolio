@@ -43,6 +43,16 @@ function Work() {
     },
     {
       id: 4,
+      number: "04",
+      title: "ECHO_POST",
+      techStack: "React.js,JavaScript,Node.js,Express.js,MongoDB,Bootstrap,Responsive design,Tailwind CSS",
+      description: "Echopost is a modern blogging platform built to facilitate content creation and user interaction. It features a clean, responsive UI developed with the MERN stack and leverages React Context API for state management. The platform supports CRUD operations, authentication, and rich-text editing, offering a smooth and intuitive writing and reading experience.",
+      link: "https://blog-echopost.netlify.app/",
+      github:"https://github.com/shaamyll/Echo-post-fullcode.git",
+      image: "https://img.freepik.com/free-vector/blogging-fun-content-creation-online-streaming-video-blog-young-girl-making-selfie-social-network-sharing-feedback-self-promotion-strategy-vector-isolated-concept-metaphor-illustration_335657-855.jpg"
+    },
+    {
+      id: 5,
       number: "03",
       title: "PROJECT-FAIR",
       techStack: "React.js,JavaScript,Node.js,Express.js,MongoDB,Bootstrap,Responsive design",
@@ -52,7 +62,7 @@ function Work() {
       image: "https://media.istockphoto.com/id/1443114875/vector/brainstorming-team-concept-business-people-discussing-idea-on-board-meeting-in-office.jpg?s=612x612&w=0&k=20&c=c3JmOoWVX-TQykCXY8a1jMEYuB-td5DTMYHO9msBIuM="
     },
     {
-      id: 4,
+      id: 6,
       number: "03",
       title: "REDUX-CART",
       techStack: "React.js,JavaScript,Redux,MongoDB,Bootstrap,Responsive design",

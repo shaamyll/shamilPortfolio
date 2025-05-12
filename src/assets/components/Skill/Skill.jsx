@@ -49,7 +49,7 @@ const Skill = () => {
     style={{ paddingBottom:"60px"}}
     >
       <center>
-      <h1 id="heading">Techstack</h1> <br /> <br />
+      <h1 id="heading" className="mt-5">Techstack</h1> <br /> <br />
       </center>
      {/* Second Marquee (Right to Left) */}
      <div

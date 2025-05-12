@@ -45,6 +45,14 @@ background-color:  white;
 
 @media (max-width: 768px) {
 
+  #content h5{
+    font-size: medium;
+  }
+
+  #content h4{
+    font-size: medium;
+  }
+
   #threed{
     height: 300px;
   }
