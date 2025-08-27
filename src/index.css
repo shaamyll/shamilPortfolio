@@ -7,13 +7,12 @@
 * {
 
     font-weight: normal;
-    font-family: "montserrat",sans-serif;
  
 }
 
 
 * {
-    @apply font-stretch-normal
+    @apply font-stretch-normal font-halvicta
 }
 
 
