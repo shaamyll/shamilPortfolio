@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.6.0",
+    "@heroui/react": "^2.8.2",
     "@react-three/drei": "^9.89.2",
     "@react-three/fiber": "^8.18.0",
     "@react-three/postprocessing": "^2.19.1",
@@ -18,7 +19,7 @@
     "animate.css": "^4.1.1",
     "bootstrap": "^5.3.5",
     "dom": "^0.0.3",
-    "mdb-react-ui-kit": "^9.0.0",
+    "framer-motion": "^12.23.12",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.9",
     "react-dom": "^18.3.1",

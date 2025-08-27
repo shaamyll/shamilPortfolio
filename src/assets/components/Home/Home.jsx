@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import '../Home/Home.css'
-import dev from '../Images/shamil.png'
+import dev from '../Images/shamil.png';
 import { IoCall } from "react-icons/io5";
 import { TbMailFilled } from "react-icons/tb";
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiInstagram } from "react-icons/si";
-import 'animate.css';
 
 function Home() {
     const [coords, setCoords] = useState({ x: 50, y: 50 });
+    const [currentIndex, setCurrentIndex] = useState(0);
+    
+    const phrases = [
+        "Full Stack developer specializing in MERN stack",
+        "Expertise in JavaScript, React, Node.js and MongoDB",
+        "Building responsive and scalable web applications",
+        "Creating modern UI with React and Tailwind CSS",
+    ];
 
     const handleMouseMove = (e) => {
         const x = (e.clientX / window.innerWidth) * 100;
@@ -17,96 +22,97 @@ function Home() {
         setCoords({ x, y });
     };
 
-    const backgroundStyle = {
-
-        background: `radial-gradient(circle at ${coords.x}% ${coords.y}%, #1e1772  0%, rgb(1, 2, 18) 100%)`,
-        transition: 'background 0.1s ease',
-    };
-
-
-      const [currentIndex, setCurrentIndex] = useState(0);
-const phrases = [
-    "Full Stack developer specializing in MERN stack",
-    "Expertise in JavaScript, React, Node.js and MongoDB",
-    "Building responsive and scalable web applications",
-    "Creating modern UI with React and Tailwind CSS",
-];
-
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % phrases.length);
-        }, 3000); // Change every 3 seconds
+        }, 3000);
+        return () => clearInterval(interval);
+    }, [phrases.length]);
 
-        return () => clearInterval(interval); // cleanup
-    }, []);
+    const backgroundStyle = {
+        background: `radial-gradient(circle at ${coords.x}% ${coords.y}%, #1e1772 0%, #010212 100%)`,
+        transition: 'background 0.1s ease',
+    };
 
     return (
-        <div>
+        <div 
+            id="main"
+            className="min-h-screen flex items-center justify-center p-4 md:p-8 relative overflow-hidden"
+            style={backgroundStyle}
+            onMouseMove={handleMouseMove}
+        >
+            <div className="container mx-auto z-10">
+                <div className="min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-16">
+  
+  {/* Left side - Text content */}
+  <div className="text-center md:text-left max-w-xl font-halvicta">
+    <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+      Hi, I'm <span className="text-gradient bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-halvicta">Shamil</span>
+    </h1>
 
-            <div
-                id='main'
-                style={backgroundStyle} onMouseMove={handleMouseMove}
-            >
+    <h2 className="text-lg md:text-2xl text-gray-300 mb-8 transition-all duration-500 font-halvicta">
+      Full Stack developer specializing in MERN stack
+    </h2>
 
-                <div className="container " >
-                    <div id='home' className="row mt-5  flex justify-center mx-auto" >
-
-                        <div id='first' className="col-12 col-md-5 mt-5 " >
-                            <h4 className='fw-bold fs-2 ' id='gm'>Hi! , I'm</h4>
-                            <h1 className='animate__animated animate__fadeInDown' id='surname'>SHAMIL<span className="blinking-dot"></span></h1>
-                            <br />
-                            <h5 style={{height:"60px"}}>{phrases[currentIndex]}</h5>
-                            
-                            <center>
-                                <h5 id='gm'>Connect with me</h5> <br />
-                                <div className='flex justify-center items-center gap-6'>
-                                   <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"> <h2 ><FaLinkedin  id='logo'  className="text-white hover:text-[#77faff] hover:scale-110 transition-transform duration-300"/></h2></a>
-
-                                <a href="https://github.com/shaamyll">
-                                        <h2><FaGithub id='logo'  className="text-white hover:text-[#77faff] hover:scale-110 transition-transform duration-300"/></h2></a>
+    <p className="text-gray-300 mb-6">Connect with me</p>
 
 
-                                   <a href="https://www.instagram.com/shaamyll?igsh=MWJqMmdleGxqcW02YQ%3D%3D&utm_source=qr">
-                                   <h2 ><SiInstagram id='logo'  className="text-white hover:text-[#77faff] hover:scale-110 transition-transform duration-300"/></h2>
-                                   </a>
+    <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start text-gray-300">
+      <div className="flex items-center gap-2"><i className="fas fa-phone"></i> +91 9497225708</div>
+      <div className="flex items-center gap-2"><i className="fas fa-envelope"></i> shamilpk708@gmail.com</div>
+    </div>
+  </div>
 
-                                </div> <br />
-                                <center><h5>OR</h5></center> <br />
-                                <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 text-white text-sm text-center">
-                                    <div className="flex items-center gap-1">
-                                        <IoCall className="text-lg text-white fill-white" />
-                                        <span id='gm'>+91 9497225708</span>
-                                    </div>
-                                    <div className="flex items-center gap-1 ">
-                                        <TbMailFilled className="text-lg text-white fill-white" />
-                                        <span id='gm'>shamilpk708@gmail.com</span>
-                                    </div>
-                                </div> <br />
+  {/* Right side - Image */}
+  <div className="mt-12 md:mt-0">
+    <img 
+      src={dev} 
+      alt="Shamil" 
+      className="w-64 h-80 md:w-80 md:h-80 object-cover rounded-2xl"
+    />
+  </div>
+</div>
 
-                            </center>
-                        </div>
-
-                        <div id='imgDiv' className="col-12 col-md-6 ">
-                            <div className=''
-                                id='sha'
-                            >
-                                <img id='shaa' className='mx-auto ' src={dev} />
-                            </div>
-                        </div>
-
-
-                    </div>
+                
+                {/* Social Icons */}
+                <div className="fixed left-6 top-1/2 transform -translate-y-1/2 hidden md:flex flex-col gap-6 z-20">
+                    <a 
+                        href="https://github.com/shaamyll" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-gray-300 hover:text-white transition-colors duration-300 transform hover:scale-125"
+                        aria-label="GitHub"
+                    >
+                        <FaGithub className="w-6 h-6" />
+                    </a>
+                    <a 
+                        href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-gray-300 hover:text-white transition-colors duration-300 transform hover:scale-125"
+                        aria-label="LinkedIn"
+                    >
+                        <FaLinkedin className="w-6 h-6" />
+                    </a>
+                    <a 
+                        href="https://www.instagram.com/shaamyll?igshid=MWJqMmdleGxqcW02YQ%3D%3D&utm_source=qr" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-gray-300 hover:text-white transition-colors duration-300 transform hover:scale-125"
+                        aria-label="Instagram"
+                    >
+                        <SiInstagram className="w-6 h-6" />
+                    </a>
+                    <a 
+                        href="mailto:shamilpk708@gmail.com"
+                        className="text-gray-300 hover:text-white transition-colors duration-300 transform hover:scale-125"
+                        aria-label="Email"
+                    >
+                        <TbMailFilled className="w-6 h-6" />
+                    </a>
                 </div>
-
-
-
-
-
             </div>
         </div>
-
-
-
     )
 }
 

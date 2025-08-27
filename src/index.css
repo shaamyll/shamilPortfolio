@@ -1,31 +1,31 @@
 @import "tailwindcss";
-
+@plugin './hero.ts';
+/* Note: You may need to change the path to fit your project structure */
+@source '../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+@custom-variant dark (&:is(.dark *));
 
 * {
-    margin: 0px;
-    padding: 0px;
+
     font-weight: normal;
-    color: rgb(224, 223, 223);
     font-family: "montserrat",sans-serif;
  
 }
 
 
 * {
-    @apply   font-stretch-normal 
+    @apply font-stretch-normal
 }
 
 
-#heading {
+/* #heading {
     font-family: "Audiowide", sans-serif;
     font-weight: bolder;
     font-style: normal;
     background: linear-gradient(to bottom,#62e0e4, #200260);
-    background-clip: text;
     color: transparent;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2); /* subtle glow */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2); 
     letter-spacing: 1px;
-}
+} */
 
 
 

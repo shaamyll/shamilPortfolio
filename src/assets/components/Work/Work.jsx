@@ -1,15 +1,12 @@
-import React, { useState } from 'react';
-import './Work.css';
-import dm1 from '../Images/dm1.png';
-import zn from '../Images/zn.png'
-import pb from '../Images/pb.png'
-import Card from 'react-bootstrap/Card';
+import React, { useState } from "react";
+import dm1 from "../Images/dm1.png";
+import zn from "../Images/zn.png";
+import pb from "../Images/pb.png";
+import { motion } from "framer-motion";
+import ProjectCard from "./ProjectCard";
 
 function Work() {
-  // State to track which project is being hovered
-  const [hoveredProject, setHoveredProject] = useState(null);
 
-  // Project data
   const projects = [
     {
       id: 1,
@@ -73,50 +70,18 @@ function Work() {
     }
   ];
 
-
-  
-
   return (
-    <div id='work-section' className='pt-5 pb-5 mb-4'
- >
-      <div className="container">
-        <center>
- 
-            <h1 className='mb-4'id='heading' >Projects</h1>
-     
-        </center>
+   <div id="work-section" className="py-20 bg-gray-50">
+      <div className="flex flex-col items-center">
+        {/* Section Heading */}
+        <h1 className="text-4xl font-extrabold text-indigo-600 mb-12 drop-shadow-sm">
+          My Projects
+        </h1>
 
-        <div className="flex flex-wrap justify-center gap-5 pt-5">
-          {projects.map((project) => (
-
-
-
-            <Card id='project' className="w-full md:w-1/3 p-2"  onMouseEnter={() => setHoveredProject(project.id)}
-            onMouseLeave={() => setHoveredProject(null)}>
-              <div className="image-container">
-                <Card.Img id='image' variant="top" src={project.image} className='rounded' />
-
-                {hoveredProject === project.id && (
-                  <div className="overlay-top">
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="overlay-btn">View</a>
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="overlay-btn">GitHub</a>
-                  </div>
-                )}
-              </div>
-              <Card.Body id='pbody'>
-                <Card.Title id='title' className='fw-bold'>{project.title} <br />
-                  <span id='techstack' style={{ fontSize: "small" }}>{project.techStack}</span>
-                </Card.Title>
-
-                <Card.Text className='description-scroll'>
-
-
-                  "{project.description}"
-                </Card.Text>
-              </Card.Body>
-            </Card>
-
-
+        {/* Grid layout with motion animations */}
+        <div className="grid grid-cols-12 gap-8 max-w-[1200px] w-full px-6">
+          {projects.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
       </div>
