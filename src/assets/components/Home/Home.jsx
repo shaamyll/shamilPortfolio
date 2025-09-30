@@ -1,20 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import dev from '../Images/shamil.png';
-import { IoCall } from "react-icons/io5";
 import { TbMailFilled } from "react-icons/tb";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiInstagram } from "react-icons/si";
+import { motion } from "framer-motion";
+import TextType from '../UI/TextType';
 
 function Home() {
     const [coords, setCoords] = useState({ x: 50, y: 50 });
-    const [currentIndex, setCurrentIndex] = useState(0);
-    
-    const phrases = [
-        "Full Stack developer specializing in MERN stack",
-        "Expertise in JavaScript, React, Node.js and MongoDB",
-        "Building responsive and scalable web applications",
-        "Creating modern UI with React and Tailwind CSS",
-    ];
 
     const handleMouseMove = (e) => {
         const x = (e.clientX / window.innerWidth) * 100;
@@ -22,95 +15,102 @@ function Home() {
         setCoords({ x, y });
     };
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % phrases.length);
-        }, 3000);
-        return () => clearInterval(interval);
-    }, [phrases.length]);
-
     const backgroundStyle = {
         background: `radial-gradient(circle at ${coords.x}% ${coords.y}%, #1e1772 0%, #010212 100%)`,
         transition: 'background 0.1s ease',
     };
 
     return (
-        <div 
+        <div
             id="main"
-            className="min-h-screen flex items-center justify-center p-4 md:p-8 relative overflow-hidden"
+            className=" flex items-center justify-center pt-36 relative overflow-hidden"
             style={backgroundStyle}
             onMouseMove={handleMouseMove}
         >
             <div className="container mx-auto z-10">
-                <div className="min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-16">
-  
-  {/* Left side - Text content */}
-  <div className="text-center md:text-left max-w-xl font-halvicta">
-    <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-      Hi, I'm <span className="text-gradient bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-halvicta">Shamil</span>
-    </h1>
+                <div className=" flex flex-col md:flex-row items-center justify-between px-6 md:px-16">
 
-    <h2 className="text-lg md:text-2xl text-gray-300 mb-8 transition-all duration-500 font-halvicta">
-      Full Stack developer specializing in MERN stack
-    </h2>
-
-    <p className="text-gray-300 mb-6">Connect with me</p>
+                    {/* Left side - Text content */}
+                    <div className="text-center md:text-left max-w-xl font-halvicta ms-10">
+                        <h1 className="text-xl md:text-3xl font-bold text-white mb-4 leading-tight">
+                            Hi, I'm <br />
+                            <span style={{ fontFamily: '"Audiowide", sans-serif' }} className="block text-6xl md:text-8xl lg:text-8xl font-black bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-halvicta">
+                                SHAMIL
+                            </span>
+                        </h1>
 
 
-    <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start text-gray-300">
-      <div className="flex items-center gap-2"><i className="fas fa-phone"></i> +91 9497225708</div>
-      <div className="flex items-center gap-2"><i className="fas fa-envelope"></i> shamilpk708@gmail.com</div>
-    </div>
-  </div>
+                        <TextType
+                            text={["Full Stack developer specializing in MERN stack",
+                                "Expertise in JavaScript, React, Node.js and MongoDB",
+                                "Building responsive and scalable web applications",
+                                "Creating modern UI with React and Tailwind CSS",]}
+                            typingSpeed={75}
+                            pauseDuration={1500}
+                            showCursor={true}
+                            cursorCharacter="|"
+                            cursorClassName='white'
+                            className='text-xl'
+                        />
 
-  {/* Right side - Image */}
-  <div className="mt-12 md:mt-0">
-    <img 
-      src={dev} 
-      alt="Shamil" 
-      className="w-64 h-80 md:w-80 md:h-80 object-cover rounded-2xl"
-    />
-  </div>
-</div>
+                        <p className="text-gray-300 my-4">Connect with me</p>
 
-                
-                {/* Social Icons */}
-                <div className="fixed left-6 top-1/2 transform -translate-y-1/2 hidden md:flex flex-col gap-6 z-20">
-                    <a 
-                        href="https://github.com/shaamyll" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-gray-300 hover:text-white transition-colors duration-300 transform hover:scale-125"
-                        aria-label="GitHub"
+
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center text-gray-300">
+                            <div className="flex items-center gap-2"><i className="fas fa-phone"></i> +91 9497225708</div>
+                            <div className="flex items-center gap-2"><i className="fas fa-envelope"></i> shamilpk708@gmail.com</div>
+                        </div>
+                    </div>
+
+                    {/* Right side - Image */}
+
+                    {/* Right side - Image */}
+                    <motion.div
+                        className="h-full flex items-end"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 1 }}
                     >
+                        <img
+                            src={dev}
+                            alt="Shamil"
+                            className="w-auto h-[40vh] md:h-[70vh] max-h-[800px] max-w-[80vw] md:max-w-[500px] object-contain object-bottom"
+                        />
+                    </motion.div>
+                </div>
+
+
+                {/* Social Icons */}
+                <motion.div
+                    className="fixed right-6 bottom-6 flex flex-col gap-6 z-20 mb-10
+                        bg-gradient-to-b from-[#1e1772] to-[#010212] p-2 rounded-2xl shadow-lg backdrop-blur-md"
+                    initial={{ opacity: 0, x: 100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
+                >
+                    <a href="https://github.com/shaamyll" target="_blank" rel="noopener noreferrer"
+                        className="text-gray-200 hover:text-white transition-transform duration-300 hover:scale-125"
+                        aria-label="GitHub">
                         <FaGithub className="w-6 h-6" />
                     </a>
-                    <a 
-                        href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-gray-300 hover:text-white transition-colors duration-300 transform hover:scale-125"
-                        aria-label="LinkedIn"
-                    >
+                    <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"
+                        target="_blank" rel="noopener noreferrer"
+                        className="text-gray-200 hover:text-white transition-transform duration-300 hover:scale-125"
+                        aria-label="LinkedIn">
                         <FaLinkedin className="w-6 h-6" />
                     </a>
-                    <a 
-                        href="https://www.instagram.com/shaamyll?igshid=MWJqMmdleGxqcW02YQ%3D%3D&utm_source=qr" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-gray-300 hover:text-white transition-colors duration-300 transform hover:scale-125"
-                        aria-label="Instagram"
-                    >
+                    <a href="https://www.instagram.com/shaamyll?igshid=MWJqMmdleGxqcW02YQ%3D%3D&utm_source=qr"
+                        target="_blank" rel="noopener noreferrer"
+                        className="text-gray-200 hover:text-white transition-transform duration-300 hover:scale-125"
+                        aria-label="Instagram">
                         <SiInstagram className="w-6 h-6" />
                     </a>
-                    <a 
-                        href="mailto:shamilpk708@gmail.com"
-                        className="text-gray-300 hover:text-white transition-colors duration-300 transform hover:scale-125"
-                        aria-label="Email"
-                    >
+                    <a href="mailto:shamilpk708@gmail.com"
+                        className="text-gray-200 hover:text-white transition-transform duration-300 hover:scale-125"
+                        aria-label="Email">
                         <TbMailFilled className="w-6 h-6" />
                     </a>
-                </div>
+                </motion.div>
             </div>
         </div>
     )

@@ -44,12 +44,15 @@ const thirdRow = skills.slice(11, 17);
 const Skill = () => {
   return (
     <div
-    className="pt-5"
+    className="pt-5 bg-gray-50"
     id="skill-section"
     style={{ paddingBottom:"60px"}}
     >
       <center>
-      <h1 id="heading" className="text-4xl">Techstack</h1> <br /> <br />
+      <h1 style={{fontFamily:'"Audiowide", sans-serif'}} className=" text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#62e0e4] to-[#200260] bg-clip-text text-transparent">
+            Techstack
+          </h1>
+          <br /><br />
       </center>
      {/* Second Marquee (Right to Left) */}
      <div

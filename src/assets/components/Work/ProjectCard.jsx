@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardBody, Image, Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@heroui/react";
+import { Card, CardHeader, Image, Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@heroui/react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import dm1 from "../Images/dm1.png";
@@ -7,7 +7,7 @@ import pb from "../Images/pb.png";
 
 function ProjectCard() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  const [isHovered, setIsHovered] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const projects = [
     {
@@ -72,135 +72,155 @@ function ProjectCard() {
     }
   ];
 
-
   return (
     <>
-      <div id="work-section" className="flex flex-col items-center ">
-        {/* Section Heading */}
-        <h1 className="text-4xl font-extrabold mb-14 text-transparent bg-clip-text bg-gradient-to-b from-[#62e0e4] to-[#200260] ">
-          My Projects
-        </h1>
+    <div id="work-section" className="flex flex-col items-center py-12 bg-gray-50">
+  <h1
+    style={{ fontFamily: '"Audiowide", sans-serif' }}
+    className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#62e0e4] to-[#200260] bg-clip-text text-transparent"
+  >
+    Projects
+  </h1>
 
-        {/* Grid layout with motion animations */}
-        <div className="grid grid-cols-12 gap-8 max-w-[1200px] w-full px-6">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              viewport={{ once: true }}
-              className="col-span-12 sm:col-span-6 md:col-span-4"
-            >
-              <Card
-                isPressable
-                as="a"
-
-                target="_blank"
-                className="relative h-[220px] rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden"
-              >
-                <CardHeader className="absolute z-10 top-3 left-3 flex-col items-start">
-                  <h4 className="text-black font-bold text-lg drop-shadow-md ">
-                    {project.title}
-                  </h4>
-                </CardHeader>
-                <Image
-                  removeWrapper
-                  alt={project.title}
-                  className="z-0 w-full h-full object-cover scale-100 hover:scale-105 transition-transform duration-500"
-                  src={project.image}
-                />
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-
-      <Modal
-        isOpen={isOpen}
-        onOpenChange={onOpenChange}
-        size="5xl"
-        backdrop="blur"
-        className="dark:bg-gray-900"
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-[1200px] w-full mt-10">
+    {projects.map((project, index) => (
+      <motion.div
+        key={project.id}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: index * 0.15 }}
+        viewport={{ once: true }}
+        className="flex justify-center"
       >
-        <ModalContent>
-          {(onClose) => (
-            <>
-              <ModalHeader className="flex flex-col gap-1 text-2xl font-bold">
-                {project.title}
-                <p className="text-sm font-normal text-gray-500">{project.techStack}</p>
-              </ModalHeader>
-              <ModalBody>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="relative rounded-xl overflow-hidden">
-                    <Image
-                      alt={project.title}
-                      className="w-full h-auto object-cover rounded-xl"
-                      src={project.image}
-                    />
+        <Card
+          isPressable
+          onPress={() => {
+            setSelectedProject(project);
+            onOpen();
+          }}
+          className="w-full h-[250px] md:h-[250px] rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col"
+        >
+          <CardHeader className="absolute z-10 top-3 left-3 flex-col items-start">
+            <h4 className="text-black font-bold text-lg drop-shadow-md ">
+              {project.title}
+            </h4>
+          </CardHeader>
+          <Image
+            removeWrapper
+            alt={project.title}
+            className="w-full h-full object-cover scale-100 hover:scale-105 transition-transform duration-500"
+            src={project.image}
+          />
+        </Card>
+      </motion.div>
+    ))}
+  </div>
+</div>
+
+
+ <Modal
+  isOpen={isOpen}
+  onOpenChange={onOpenChange}
+  backdrop="blur"
+  placement="center"
+  size="lg"   // still needed, but we override below
+  hideCloseButton
+  className="dark:bg-gray-900 bg-gray-100 shadow-2xl border border-gray-200 
+             dark:border-gray-700 rounded-2xl max-w-5xl w-full p-4"
+>
+  <ModalContent>
+    {(onClose) =>
+      selectedProject && (
+        <>
+          {/* ✅ Header with close button at top right */}
+          <div className="flex justify-between items-start p-3 px-6  border-gray-200 dark:border-gray-700">
+            <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white">
+              {selectedProject.title}
+            </h2>
+            <button
+              onClick={onClose}
+              className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 
+                         bg-gray-100 dark:bg-gray-800 p-2 rounded-lg w-10 h-10 
+                         flex items-center justify-center shadow-lg"
+            >
+              ✕
+            </button>
+          </div>
+
+          <ModalBody>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* ✅ Fixed-size image section */}
+              <div className="relative w-full h-64 md:h-72 rounded-xl overflow-hidden shadow-md">
+                <Image
+                  alt={selectedProject.title}
+                  src={selectedProject.image}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* ✅ Project Details */}
+              <div className="flex flex-col">
+                <div className="mb-4">
+                  <h4 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-200">
+                    Project Overview
+                  </h4>
+                  <p className="text-gray-600 dark:text-gray-400 line-clamp-4">
+                    {selectedProject.description}
+                  </p>
+                </div>
+
+                <div className="mt-auto pt-4">
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {selectedProject.techStack.split(",").map((tech, index) => (
+                      <span
+                        key={index}
+                        className="px-3 py-1 bg-blue-100 dark:bg-blue-900 
+                                 text-blue-800 dark:text-blue-100 
+                                 text-xs rounded-full shadow-sm"
+                      >
+                        {tech.trim()}
+                      </span>
+                    ))}
                   </div>
-                  <div className="flex flex-col">
-                    <div className="mb-4">
-                      <h4 className="text-lg font-semibold mb-2">Project Overview</h4>
-                      <p className="text-gray-700 dark:text-gray-300">
-                        {project.longDescription || project.description}
-                      </p>
-                    </div>
 
-                    {project.features && (
-                      <div className="mb-4">
-                        <h4 className="text-lg font-semibold mb-2">Key Features</h4>
-                        <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
-                          {project.features.map((feature, index) => (
-                            <li key={index}>{feature}</li>
-                          ))}
-                        </ul>
-                      </div>
+                  {/* Buttons */}
+                  <div className="flex gap-3">
+                    {selectedProject.link && (
+                      <Button
+                        href={selectedProject.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 rounded-lg bg-blue-600 text-white 
+                                 hover:bg-blue-700 transition flex-1 text-center"
+                      >
+                        Live Demo
+                      </Button>
                     )}
-
-                    <div className="mt-auto pt-4">
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {project.techStack.split(',').map((tech, index) => (
-                          <span key={index} className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 text-xs rounded-full">
-                            {tech.trim()}
-                          </span>
-                        ))}
-                      </div>
-
-                      <div className="flex gap-3">
-                        <a
-                          href={project.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition flex-1 text-center"
-                        >
-                          Live Demo
-                        </a>
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="px-4 py-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600 transition flex-1 text-center"
-                        >
-                          View Code
-                        </a>
-                      </div>
-                    </div>
+                    <Button
+                      href={selectedProject.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 rounded-lg bg-gray-200 dark:bg-gray-700 
+                               text-gray-800 dark:text-white hover:bg-gray-300 
+                               dark:hover:bg-gray-600 transition flex-1 text-center"
+                    >
+                      View Code
+                    </Button>
                   </div>
                 </div>
-              </ModalBody>
-              <ModalFooter>
-                <Button color="danger" variant="light" onPress={onClose}>
-                  Close
-                </Button>
-              </ModalFooter>
-            </>
-          )}
-        </ModalContent>
-      </Modal>
+              </div>
+            </div>
+          </ModalBody>
+        </>
+      )
+    }
+  </ModalContent>
+</Modal>
+
+
+
     </>
   );
 }
-
 
 export default ProjectCard;
