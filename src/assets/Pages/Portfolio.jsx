@@ -6,7 +6,7 @@ import Skill from '../components/Skill/Skill'
 import ProjectCard from '../components/Work/ProjectCard'
 
 
-function Potfolio() {
+function Portfolio() {
 
   return (
     <div>

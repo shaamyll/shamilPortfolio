@@ -1,7 +1,7 @@
 
 import './App.css'
 
-import Potfolio from './assets/Pages/Potfolio';
+import Potfolio from './assets/Pages/Portfolio';
 
 
 function App() {
