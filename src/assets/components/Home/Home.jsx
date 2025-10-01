@@ -6,17 +6,17 @@ import { SiInstagram } from "react-icons/si";
 import { motion } from "framer-motion";
 import TextType from '../UI/TextType';
 import PixelBlast from '../UI/PixelBlast';
+import { Phone, Mail } from 'lucide-react';
 
 function Home() {
     return (
         <div
             id="main"
-            className="relative min-h-screen w-full flex items-center justify-center pt-36 bg-[#010212]"
+            className="relative w-full flex items-center justify-center pt-15 bg-[#010212]"
         >
             {/* PixelBlast Background Only */}
-             <div className="absolute inset-0 z-0 pointer-events-none">
+            <div className="absolute inset-0 z-0 pointer-events-none">
                 <PixelBlast
-                 className="w-full h-full" 
                     variant="circle"
                     pixelSize={6}
                     color="#B19EEF"
@@ -45,8 +45,8 @@ function Home() {
                     <div className="text-center md:text-left max-w-xl font-halvicta ms-10">
                         <h1 className="text-xl md:text-3xl font-bold text-white mb-4 leading-tight">
                             Hi, I'm <br />
-                            <span 
-                                style={{ fontFamily: '"Audiowide", sans-serif' }} 
+                            <span
+                                style={{ fontFamily: '"Audiowide", sans-serif' }}
                                 className="block text-6xl md:text-8xl lg:text-8xl font-black bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent"
                             >
                                 SHAMIL
@@ -63,32 +63,30 @@ function Home() {
                             typingSpeed={75}
                             pauseDuration={1500}
                             showCursor={true}
-                            cursorCharacter="|"
-                            cursorClassName="text-white"
+                            cursorCharacter="_"
+                            cursorClassName="text-white font-xl"
                             className="text-xl"
                         />
 
                         <p className="text-gray-300 my-4">Connect with me</p>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center text-gray-300">
-                            <div className="flex items-center gap-2"><i className="fas fa-phone"></i> +91 9497225708</div>
-                            <div className="flex items-center gap-2"><i className="fas fa-envelope"></i> shamilpk708@gmail.com</div>
+                            <div className="flex items-center gap-2 font-bold">
+                                <Phone className="w-4 h-4 " />
+                                +91 9497225708
+                            </div>
+                            <div className="flex items-center gap-2 font-semibold">
+                                <Mail className="w-4 h-4" />
+                                shamilpk708@gmail.com
+                            </div>
                         </div>
                     </div>
 
-                    {/* Right: Image */}
-                    <motion.div
-                        className="h-full flex items-end mt-8 md:mt-0"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                    >
-                        <img
-                            src={dev}
-                            alt="Shamil"
-                            className="w-auto h-[60vh] md:h-[85vh] max-h-[800px] max-w-[80vw] md:max-w-[500px] object-contain object-bottom"
-                        />
-                    </motion.div>
+                    <img
+                        src={dev}
+                        alt="Shamil"
+                        className="w-auto h-[60vh] md:h-[85vh] max-h-[800px] max-w-[80vw] md:max-w-[500px] object-contain object-bottom"
+                    />
                 </div>
             </div>
 
@@ -100,34 +98,34 @@ function Home() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
             >
-                <a 
-                    href="https://github.com/shaamyll" 
-                    target="_blank" 
+                <a
+                    href="https://github.com/shaamyll"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-200 hover:text-white transition-transform duration-300 hover:scale-125"
                     aria-label="GitHub"
                 >
                     <FaGithub className="w-6 h-6" />
                 </a>
-                <a 
-                    href="https://www.linkedin.com/in/shaamyll/" 
-                    target="_blank" 
+                <a
+                    href="https://www.linkedin.com/in/shaamyll/"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-200 hover:text-white transition-transform duration-300 hover:scale-125"
                     aria-label="LinkedIn"
                 >
                     <FaLinkedin className="w-6 h-6" />
                 </a>
-                <a 
-                    href="https://www.instagram.com/shaamyll" 
-                    target="_blank" 
+                <a
+                    href="https://www.instagram.com/shaamyll"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-200 hover:text-white transition-transform duration-300 hover:scale-125"
                     aria-label="Instagram"
                 >
                     <SiInstagram className="w-6 h-6" />
                 </a>
-                <a 
+                <a
                     href="mailto:shamilpk708@gmail.com"
                     className="text-gray-200 hover:text-white transition-transform duration-300 hover:scale-125"
                     aria-label="Email"

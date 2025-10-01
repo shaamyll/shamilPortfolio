@@ -1,9 +1,9 @@
+/* src/font.css */
 @font-face {
   font-family: 'Halvetica';
-  src:
-    url('/src/assets/fonts/HelveticaNeueMedium.otf') format('otf'),
-    url('/src/assets/fonts/HelveticaNeueMedium.otf') format('opentype');
-  font-weight: normal;
+  src: url('/fonts/HelveticaNeueMedium.woff2') format('woff2'),
+       url('/fonts/HelveticaNeueMedium.otf') format('opentype');
+  font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
-  

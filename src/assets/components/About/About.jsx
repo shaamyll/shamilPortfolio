@@ -18,7 +18,7 @@ function About() {
         <div className="flex flex-col-reverse md:flex-row items-center gap-12 max-w-6xl mx-auto">
           {/* Left: Text content */}
           <div className="flex-1 text-center md:text-left space-y-6">
-            <h2 className="text-2xl  font-bold  dark:text-white">
+            <h2 className="text-xl  font-semibold">
               Hi, I'm Muhammed Shamil PK
             </h2>
 
@@ -30,9 +30,7 @@ function About() {
               radius={100}
               falloff='linear'
             />
-
-
-            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-black ">
               My expertise spans across MongoDB, Express.js, React.js, and Node.js, with a strong foundation in
               web development principles and best practices. I love creating efficient, scalable, and
               user-friendly applications that solve real-world problems.

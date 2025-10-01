@@ -1,16 +1,16 @@
 @import "tailwindcss";
-@plugin './hero.ts';
-@import './font.css'
-/* Note: You may need to change the path to fit your project structure */
-@source '../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+@import "./font.css";
+
+@plugin "./hero.ts";
+@source "../node_modules/@heroui/theme/dist/**/*.{js,jsx}";
 @custom-variant dark (&:is(.dark *));
 
-*{
-    font-weight: normal;
-    font-family: "Montserrat", sans-serif;
+* {
+  font-family: "Montserrat", sans-serif;
 }
 
-
-
-
-
+@layer base {
+  html {
+    font-family: 'Halvetica', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+}

@@ -1,22 +1,20 @@
-import {heroui} from "@heroui/react";
+import heroui from '@heroui/theme/plugin';
 
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,jsx}",
+    "./node_modules/@heroui/theme/dist/**/*.{js,jsx}",
   ],
-  important: true,
   darkMode: "class",
-  plugins: [ 
-    require("tailwindcss-animate"),
+  plugins: [
     heroui({
       themes: {
         "purple-dark": {
-          extend: "dark", 
+          extend: "dark",
           colors: {
-            background: "#e5e7eb",
+            background: "#010212",
             foreground: "#ffffff",
             primary: {
               50: "#3B096C",
@@ -34,33 +32,8 @@ export default {
             },
             focus: "#F182F6",
           },
-          layout: {
-            disabledOpacity: "0.3",
-            radius: {
-              small: "4px",
-              medium: "6px",
-              large: "8px",
-            },
-            borderWidth: {
-              small: "1px",
-              medium: "2px",
-              large: "3px",
-            },
-          },
         },
       },
-    })],
-  theme: {
-    extend: {
-      keyframes: {
-        shine: {
-          '0%': { 'background-position': '100%' },
-          '100%': { 'background-position': '-100%' },
-        },
-      },
-      animation: {
-        shine: 'shine 5s linear infinite',
-      },
-    },
-  },
+    }),
+  ],
 };

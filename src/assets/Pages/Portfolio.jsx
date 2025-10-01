@@ -20,4 +20,4 @@ function Portfolio() {
   )
 }
 
-export default Potfolio
+export default Portfolio
