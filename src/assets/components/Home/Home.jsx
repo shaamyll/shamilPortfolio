@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import dev from '../Images/shamil.png';
 import { TbMailFilled } from "react-icons/tb";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
@@ -7,8 +7,23 @@ import { motion } from "framer-motion";
 import TextType from '../UI/TextType';
 import PixelBlast from '../UI/PixelBlast';
 import { Phone, Mail } from 'lucide-react';
+import PageLoader from '../UI/PageLoader';
 
 function Home() {
+      const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate minimal load time (or wait for assets)
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1200); // Show loader for at least 1.2s
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <PageLoader />;
+  }
     return (
         <div
             id="main"
